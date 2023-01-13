@@ -109,7 +109,8 @@
 <div class="basPage">
 
   <button>Boutton1</button>
-  <button [disabled]="affichageButton()" class="next" (click)="test()"><a >Next Step</a></button>
+  <button [disabled]=affichageButton() class="next" (click)="test()" [ngStyle]="{opacity :
+  affichageButton() ? '0.5' : '1'}"><a >Next Step</a></button>
 </div>
 
 </div>

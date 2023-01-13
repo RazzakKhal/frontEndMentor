@@ -24,7 +24,7 @@ userPhone : FormControl;
 constructor(formBuilder : FormBuilder){
 
   this.userName = formBuilder.control('', [Validators.required]);
-  this.userMail = formBuilder.control('', [Validators.required]);
+  this.userMail = formBuilder.control('', [Validators.required, Validators.email]);
   this.userPhone = formBuilder.control('', [Validators.required]);
 this.signInForm = formBuilder.group({
   email : this.userMail,
@@ -35,9 +35,9 @@ this.signInForm = formBuilder.group({
 
 affichageButton(){
   if(this.signInForm.valid === true){
-    return true;
-  }else{
     return false;
+  }else{
+    return true;
   }
 }
 
