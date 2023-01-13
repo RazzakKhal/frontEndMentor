@@ -113,7 +113,7 @@
   <button *ngIf="affichageButtonRoute4()" [routerLink]="['/finishingUp']">Previous</button>
 
 
-  <button [disabled]=affichageButton() class="next" (click)="test()" [ngStyle]="{opacity :
+  <button [disabled]=affichageButton() class="next" [ngStyle]="{opacity :
   affichageButton() ? '0.5' : '1'}" [routerLink]="['/selectYourPlan']" *ngIf=affichageButtonRoute()><a >Next Step</a></button>
 
 

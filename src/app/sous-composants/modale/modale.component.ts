@@ -22,6 +22,9 @@ userMail : FormControl;
 userPhone : FormControl;
 router : Router | undefined;
 buttonProfil = true;
+arcade = false;
+advanced = false;
+pro = false;
 
 
 constructor(formBuilder : FormBuilder, router: Router){
@@ -85,10 +88,10 @@ return false;
 }
 
 
+// si je choisi arcade alors sa valeur est à true et les autres à false
 
+// // si je choisi advanced alors sa valeur est à true et les autres à false
 
-test(){
-  console.log('bouton pas desactivé');
-}
+// si je choisi pro alors sa valeur est à true et les autres à false
 
 }
