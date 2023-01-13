@@ -107,8 +107,12 @@
 
 <!-- triche boutton next et previous -->
 <div class="basPage">
+  <button *ngIf="affichageButtonRoute()" [ngStyle]="{opacity : 0}"></button>
+  <button *ngIf="affichageButtonRoute2()" [routerLink]="['/personalInfo']">Previous</button>
+  <button *ngIf="affichageButtonRoute3()" [routerLink]="['/selectYourPlan']">Previous</button>
+  <button *ngIf="affichageButtonRoute4()" [routerLink]="['/finishingUp']">Previous</button>
 
-  <button>Boutton1</button>
+
   <button [disabled]=affichageButton() class="next" (click)="test()" [ngStyle]="{opacity :
   affichageButton() ? '0.5' : '1'}" [routerLink]="['/selectYourPlan']" *ngIf=affichageButtonRoute()><a >Next Step</a></button>
 
