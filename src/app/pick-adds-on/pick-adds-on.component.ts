@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class PickAddsOnComponent {
 
+  myDescription = "Adds-on help enhance your gaming experience";
+
 }

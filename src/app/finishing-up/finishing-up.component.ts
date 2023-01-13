@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./finishing-up.component.css']
 })
 export class FinishingUpComponent {
-
+myDescription = "Double-check everything looks OK before confirming";
 }

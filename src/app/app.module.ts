@@ -10,6 +10,7 @@ import { FinishingUpComponent } from './finishing-up/finishing-up.component';
 import { HeaderComponent } from './header/header.component';
 import { MainComponent } from './main/main.component';
 import { FooterComponent } from './footer/footer.component';
+import { ModaleComponent } from './sous-composants/modale/modale.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FooterComponent } from './footer/footer.component';
     FinishingUpComponent,
     HeaderComponent,
     MainComponent,
-    FooterComponent
+    FooterComponent,
+    ModaleComponent
   ],
   imports: [
     BrowserModule,

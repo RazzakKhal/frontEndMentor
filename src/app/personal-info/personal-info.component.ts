@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class PersonalInfoComponent {
 
+  myDescription="Please provide your name, email adress, and phone number.";
 }

@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./select-your-plan.component.css']
 })
 export class SelectYourPlanComponent {
-
+myDescription = "you have the option of monthly or yearly billing."
 }

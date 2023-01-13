@@ -4,3 +4,26 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+ul{
+  display : flex;
+  width : 60%;
+  height : 70%;
+  margin: 0 auto;
+  /* border: 1px solid; */
+  list-style: none;
+  justify-content: space-around;
+  align-items: center;
+
+}
+
+ul li a{
+  text-decoration: none;
+  border:1px solid white;
+  color : white;
+  padding: 10px 15px;
+  border-radius: 50%;
+  font-weight: bold;
+}
+
+
