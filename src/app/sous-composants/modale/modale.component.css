@@ -100,3 +100,73 @@ img{
   height : 25px;
   width:25px;
 }
+
+
+/* partie finishing up */
+
+.finishingUp{
+  height : 30vh;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.optionFinish{
+  display:flex;
+  justify-content: space-around;
+}
+
+.firstAndSecondOption{
+  height: 40%;
+  background-color: hsl(206, 94%, 87%);
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.thirdOption{
+  height : 20%;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.changePeriod{
+  text-decoration: underline;
+
+}
+
+.changePeriod:hover{
+  cursor: grab;
+}
+
+.basPage{
+  width : 90vw;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  bottom: 25px;
+  left : 15px;
+}
+
+.red{
+  color:hsl(354, 84%, 57%)
+}
+
+/*
+bouton next */
+
+.next{
+  padding: 10px;
+  color: white;
+  background-color: hsl(213, 96%, 18%);
+  border-radius: 5px;
+
+}
+
+.next a{
+  text-decoration: none;
+  color:white;
+}
+
+

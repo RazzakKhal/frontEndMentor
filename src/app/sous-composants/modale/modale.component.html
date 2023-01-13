@@ -4,19 +4,23 @@
 
 
 <!-- partie Personal Info  -->
-<form action="" *ngIf="afficheForm">
+<form action="" *ngIf="afficheForm" [formGroup]="signInForm">
   <div class="labelInput">
+    <p *ngIf="!userName.valid" class="red">champs requis</p>
   <label for="name">Name</label>
-  <input type="text" name="name" id="name">
+  <input type="text" name="name" id="name" [formControl]="userName">
 </div>
 <div class="labelInput">
+  <p *ngIf="!userMail.valid" class="red">Mail non conforme</p>
   <label for="email">Email Adress</label>
-  <input type="text" name="email" id="email">
+  <input type="text" name="email" id="email" [formControl]="userMail">
 </div>
   <div class="labelInput">
+    <p *ngIf="!userPhone.valid" class="red">champs requis</p>
   <label for="phone">Phone Number</label>
-  <input type="text" name="phone" id="phone">
+  <input type="text" name="phone" id="phone" [formControl]="userPhone">
 </div>
+
 </form>
 
 <!-- Partie Select Your Plan -->
@@ -68,5 +72,44 @@
 </div>
 </div>
 
+<!-- Partie finishing up -->
+
+<div class="finishingUp" *ngIf="afficheFinish">
+<div class="optionFinish firstAndSecondOption">
+  <div>
+    <p>Arcade(monthly)</p>
+    <p class="changePeriod">change</p>
+  </div>
+  <p>$9/mo</p>
+</div>
+
+
+<div class="optionFinish firstAndSecondOption">
+  <div>
+    <p>Online service</p>
+    <p>Larger Storage</p>
+  </div>
+  <div>
+    <p>+$1/mo</p>
+    <p>+$2/mo</p>
+  </div>
+</div>
+
+<div class="optionFinish thirdOption">
+  <p>Total per month</p>
+  <p>+$12/mo</p>
+</div>
+
+</div>
+
 <!-- Fin de la modale -->
+
+
+<!-- triche boutton next et previous -->
+<div class="basPage">
+
+  <button>Boutton1</button>
+  <button [disabled]="affichageButton()" class="next" (click)="test()"><a >Next Step</a></button>
+</div>
+
 </div>

@@ -1,4 +1,12 @@
 .main{
   height : 10vh;
   background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  padding-left: 15px;
+  padding-right: 15px;
 }
+
+

@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-modale',
@@ -12,6 +13,36 @@ export class ModaleComponent {
   @Input() afficheForm : boolean | undefined;
   @Input() affichePlan : boolean | undefined;
   @Input() afficheAdd : boolean | undefined;
+  @Input() afficheFinish: boolean | undefined;
 
+signInForm : FormGroup;
+userName : FormControl;
+userMail : FormControl;
+userPhone : FormControl;
+
+
+constructor(formBuilder : FormBuilder){
+
+  this.userName = formBuilder.control('', [Validators.required]);
+  this.userMail = formBuilder.control('', [Validators.required]);
+  this.userPhone = formBuilder.control('', [Validators.required]);
+this.signInForm = formBuilder.group({
+  email : this.userMail,
+  name: this.userName,
+  phone : this.userPhone
+});
+}
+
+affichageButton(){
+  if(this.signInForm.valid === true){
+    return true;
+  }else{
+    return false;
+  }
+}
+
+test(){
+  console.log('bouton pas desactivé');
+}
 
 }
