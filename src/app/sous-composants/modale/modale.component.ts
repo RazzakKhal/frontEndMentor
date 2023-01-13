@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-modale',
@@ -19,9 +20,11 @@ signInForm : FormGroup;
 userName : FormControl;
 userMail : FormControl;
 userPhone : FormControl;
+router : Router | undefined;
+buttonProfil = true;
 
 
-constructor(formBuilder : FormBuilder){
+constructor(formBuilder : FormBuilder, router: Router){
 
   this.userName = formBuilder.control('', [Validators.required]);
   this.userMail = formBuilder.control('', [Validators.required, Validators.email]);
@@ -31,7 +34,12 @@ this.signInForm = formBuilder.group({
   name: this.userName,
   phone : this.userPhone
 });
+this.router = router;
 }
+
+
+// degrisage du bouton si le formulaire page 1 est rempli
+
 
 affichageButton(){
   if(this.signInForm.valid === true){
@@ -40,6 +48,44 @@ affichageButton(){
     return true;
   }
 }
+
+// obligé de répéter affichage button car quand je met un paramètre pour récup l'url cela deconne, à modifier
+// a modifier plus tard
+
+affichageButtonRoute(){
+  if(this.router?.url !== '/personalInfo'){
+return false;
+  }else{
+    return true;
+  }
+}
+
+affichageButtonRoute2(){
+  if(this.router?.url !== '/selectYourPlan'){
+return false;
+  }else{
+    return true;
+  }
+}
+
+affichageButtonRoute3(){
+  if(this.router?.url !== '/pickAddsOn'){
+return false;
+  }else{
+    return true;
+  }
+}
+
+affichageButtonRoute4(){
+  if(this.router?.url !== '/finishingUp'){
+return false;
+  }else{
+    return true;
+  }
+}
+
+
+
 
 test(){
   console.log('bouton pas desactivé');
