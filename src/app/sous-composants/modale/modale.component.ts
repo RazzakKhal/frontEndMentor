@@ -9,5 +9,8 @@ export class ModaleComponent {
 
   @Input() title : string | undefined;
   @Input() description : string | undefined;
+  @Input() afficheForm : boolean | undefined;
+  @Input() affichePlan : boolean | undefined;
+
 
 }

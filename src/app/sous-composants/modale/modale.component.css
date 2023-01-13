@@ -1,6 +1,6 @@
 .main{
-  height : 50vh;
-  width : 90vw;
+  min-height : 50vh;
+  width : 80vw;
   background-color: white;
   border-radius: 10px;
   position: fixed;
@@ -12,15 +12,63 @@
   justify-content: space-around;
 }
 
+/* partie personalInfo */
+
 form{
-  height : 70%;
+  height : 30vh;
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   justify-content: space-between;
+
 }
 
 input{
   padding : 10px;
+  width : 80%;
+  border-radius: 5px;
+  border: 1px solid hsl(231, 11%, 63%);
 
+}
+
+.labelInput{
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* Partie SelectPlan */
+
+.selectPlan{
+  height : 40vh;
+  display : flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.option{
+  height : 25%;
+  border: 1px solid hsl(231, 11%, 63%);
+  border-radius: 5px;
+  display:flex;
+box-sizing: border-box;
+padding: 18px;
+}
+
+img{
+  margin-right : 15px;
+}
+
+.monthlyYearly{
+  height : 15%;
+  /* border:1px solid hsl(231, 11%, 63%); */
+  border-radius: 5px;
+  background-color: hsl(217, 100%, 97%);
+
+}
+
+.optionAndPrice{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
