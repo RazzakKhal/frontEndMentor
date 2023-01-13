@@ -72,3 +72,31 @@ img{
   flex-direction: column;
   justify-content: space-between;
 }
+
+
+/* partie pick add */
+
+.pickadd{
+  height : 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.optionAdd{
+  height : 25%;
+  border: 1px solid hsl(231, 11%, 63%);
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  box-sizing: border-box;
+
+}
+
+.check{
+  padding: 0px;
+  height : 25px;
+  width:25px;
+}

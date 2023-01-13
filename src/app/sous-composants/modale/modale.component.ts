@@ -11,6 +11,7 @@ export class ModaleComponent {
   @Input() description : string | undefined;
   @Input() afficheForm : boolean | undefined;
   @Input() affichePlan : boolean | undefined;
+  @Input() afficheAdd : boolean | undefined;
 
 
 }
