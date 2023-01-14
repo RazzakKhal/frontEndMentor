@@ -28,6 +28,13 @@ arcade = false;
 advanced = false;
 pro = false;
 signInValid : boolean;
+monthly = true;
+arcadePrice = 9;
+advancedPrice = 12;
+proPrice = 15;
+arcadeSelected = false;
+advancedSelected = false;
+proSelected = false;
 
 
 constructor(formBuilder : FormBuilder, router: Router){
@@ -55,10 +62,39 @@ ngOnInit(): void {
 
 }
 
-// si je choisi arcade alors sa valeur est à true et les autres à false
+changeMonthly(){
+  this.monthly = !this.monthly;
+  this.changePrice();
+}
 
-// // si je choisi advanced alors sa valeur est à true et les autres à false
+changePrice(){
+  if(this.monthly){
+    this.arcadePrice = 9;
+    this.advancedPrice = 12;
+    this.proPrice = 15;
+  }else{
+    this.arcadePrice = 90;
+    this.advancedPrice = 120;
+    this.proPrice = 150;
+  }
+}
 
-// si je choisi pro alors sa valeur est à true et les autres à false
+changeArcadeSelected(){
+  this.arcadeSelected = true;
+  this.advancedSelected = false;
+  this.proSelected = false;
+}
+
+changeAdvancedSelected(){
+  this.arcadeSelected = false;
+  this.advancedSelected = true;
+  this.proSelected = false;
+}
+
+changeProSelected(){
+  this.arcadeSelected = false;
+  this.advancedSelected = false;
+  this.proSelected = true;
+}
 
 }

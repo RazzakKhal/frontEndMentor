@@ -25,20 +25,30 @@
 
 <!-- Partie Select Your Plan -->
 <div class="selectPlan" *ngIf="affichePlan">
-<div class="option arcade">
+<div class="option arcade" (click)="changeArcadeSelected()" [ngStyle]="{backgroundColor : arcadeSelected ? 'hsl(229, 24%, 87%)' : 'white'}">
   <img src="../../../assets/images/icon-arcade.svg" alt="">
-  <div class="optionAndPrice"><p>Arcade</p><p>$9/mo</p></div>
+  <div class="optionAndPrice"><p>Arcade</p><p>${{arcadePrice}}/mo</p></div>
 </div>
-<div class="option advanced">
+<div class="option advanced" (click)="changeAdvancedSelected()" [ngStyle]="{backgroundColor : advancedSelected ? 'hsl(229, 24%, 87%)' : 'white'}">
   <img src="../../../assets/images/icon-advanced.svg" alt="">
-  <div class="optionAndPrice"><p>Advanced</p><p>$12/mo</p></div>
+  <div class="optionAndPrice"><p>Advanced</p><p>${{advancedPrice}}/mo</p></div>
 </div>
-<div class="option pro">
+<div class="option pro" (click)="changeProSelected()" [ngStyle]="{backgroundColor : proSelected ? 'hsl(229, 24%, 87%)' : 'white'}">
   <img src="../../../assets/images/icon-pro.svg" alt="">
-  <div class="optionAndPrice"><p>Pro</p><p>$15/mo</p></div>
+  <div class="optionAndPrice"><p>Pro</p><p>${{proPrice}}/mo</p></div>
 </div>
 
-<div class="monthlyYearly"></div>
+<div class="monthlyYearly">
+  <p [ngStyle]="{
+    color : monthly ? 'hsl(213, 96%, 18%)' : 'hsl(231, 11%, 63%)'
+  }">Monthly</p>
+  <div (click)="changeMonthly()"><button [ngStyle]="{
+   right: monthly ? 'initial' : '0px'
+  }"></button></div>
+  <p [ngStyle]="{
+    color : !monthly ? 'hsl(213, 96%, 18%)' : 'hsl(231, 11%, 63%)'
+  }">Yearly</p>
+</div>
 
 </div>
 
