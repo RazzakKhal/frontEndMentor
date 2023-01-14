@@ -1,13 +1,15 @@
-import { Component, Input } from '@angular/core';
+import { Component, Injectable, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { of } from 'rxjs';
+
 
 @Component({
   selector: 'app-modale',
   templateUrl: './modale.component.html',
   styleUrls: ['./modale.component.css']
 })
-export class ModaleComponent {
+export class ModaleComponent implements OnInit {
 
   @Input() title : string | undefined;
   @Input() description : string | undefined;
@@ -25,6 +27,7 @@ buttonProfil = true;
 arcade = false;
 advanced = false;
 pro = false;
+signInValid : boolean;
 
 
 constructor(formBuilder : FormBuilder, router: Router){
@@ -38,55 +41,19 @@ this.signInForm = formBuilder.group({
   phone : this.userPhone
 });
 this.router = router;
+this.signInValid = this.signInForm.valid;
+}
+
+// méthode pour récupérer l'etat du formulaire dans mon composant next
+
+getEtat(){
+  return of(this.signInForm.valid);
 }
 
 
-// degrisage du bouton si le formulaire page 1 est rempli
+ngOnInit(): void {
 
-
-affichageButton(){
-  if(this.signInForm.valid === true){
-    return false;
-  }else{
-    return true;
-  }
 }
-
-// obligé de répéter affichage button car quand je met un paramètre pour récup l'url cela deconne, à modifier
-// a modifier plus tard
-
-affichageButtonRoute(){
-  if(this.router?.url !== '/personalInfo'){
-return false;
-  }else{
-    return true;
-  }
-}
-
-affichageButtonRoute2(){
-  if(this.router?.url !== '/selectYourPlan'){
-return false;
-  }else{
-    return true;
-  }
-}
-
-affichageButtonRoute3(){
-  if(this.router?.url !== '/pickAddsOn'){
-return false;
-  }else{
-    return true;
-  }
-}
-
-affichageButtonRoute4(){
-  if(this.router?.url !== '/finishingUp'){
-return false;
-  }else{
-    return true;
-  }
-}
-
 
 // si je choisi arcade alors sa valeur est à true et les autres à false
 

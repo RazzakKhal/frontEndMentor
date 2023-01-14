@@ -1,5 +1,15 @@
-<button [disabled]="disabled"><a >Next Step</a></button>
-<!-- <button><a [routerLink]="['/pickAddsOn']" routerLinkActive="" [routerLinkActiveOptions]="{ exact: true }">Next Step 2</a></button>
-<button><a [routerLink]="['/finishingUp']" routerLinkActive="" [routerLinkActiveOptions]="{ exact: true }">Confirm</a></button>
-<button><a [routerLink]="['/personalInfo']" routerLinkActive="apparait" [routerLinkActiveOptions]="{ exact: true }">Next Step</a></button> -->
+<div class="basPage">
+  <button *ngIf="affichageButtonRoute()" [ngStyle]="{opacity : 0}"></button>
+  <button *ngIf="affichageButtonRoute2()" [routerLink]="['/personalInfo']">Previous</button>
+  <button *ngIf="affichageButtonRoute3()" [routerLink]="['/selectYourPlan']">Previous</button>
+  <button *ngIf="affichageButtonRoute4()" [routerLink]="['/finishingUp']">Previous</button>
 
+
+  <button [disabled]=affichageButton() class="next" [ngStyle]="{opacity :
+  affichageButton() ? '0.5' : '1'}" [routerLink]="['/selectYourPlan']" *ngIf=affichageButtonRoute()><a >Next Step</a></button>
+
+
+  <button class="next"  [routerLink]="['/pickAddsOn']" *ngIf=affichageButtonRoute2()><a >Next Step</a></button>
+  <button class="next"  [routerLink]="['/finishingUp']" *ngIf=affichageButtonRoute3()><a >Next Step</a></button>
+  <button class="next"  [routerLink]="['/personalInfo']" *ngIf=affichageButtonRoute4()><a >Confirm</a></button>
+</div>

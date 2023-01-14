@@ -6,7 +6,7 @@
 <!-- partie Personal Info  -->
 <form action="" *ngIf="afficheForm" [formGroup]="signInForm">
   <div class="labelInput">
-    <p *ngIf="!userName.valid" class="red">champs requis</p>
+    <p *ngIf="!userName.valid" class="red redtest">champs requis</p>
   <label for="name">Name</label>
   <input type="text" name="name" id="name" [formControl]="userName">
 </div>
@@ -103,23 +103,5 @@
 </div>
 
 <!-- Fin de la modale -->
-
-
-<!-- triche boutton next et previous -->
-<div class="basPage">
-  <button *ngIf="affichageButtonRoute()" [ngStyle]="{opacity : 0}"></button>
-  <button *ngIf="affichageButtonRoute2()" [routerLink]="['/personalInfo']">Previous</button>
-  <button *ngIf="affichageButtonRoute3()" [routerLink]="['/selectYourPlan']">Previous</button>
-  <button *ngIf="affichageButtonRoute4()" [routerLink]="['/finishingUp']">Previous</button>
-
-
-  <button [disabled]=affichageButton() class="next" [ngStyle]="{opacity :
-  affichageButton() ? '0.5' : '1'}" [routerLink]="['/selectYourPlan']" *ngIf=affichageButtonRoute()><a >Next Step</a></button>
-
-
-  <button class="next"  [routerLink]="['/pickAddsOn']" *ngIf=affichageButtonRoute2()><a >Next Step</a></button>
-  <button class="next"  [routerLink]="['/finishingUp']" *ngIf=affichageButtonRoute3()><a >Next Step</a></button>
-  <button class="next"  [routerLink]="['/personalInfo']" *ngIf=affichageButtonRoute4()><a >Confirm</a></button>
-</div>
 
 </div>
