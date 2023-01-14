@@ -12,6 +12,7 @@ import { MainComponent } from './main/main.component';
 import { FooterComponent } from './footer/footer.component';
 import { ModaleComponent } from './sous-composants/modale/modale.component';
 import { NextComponent } from './sous-composants/next/next.component';
+import { RedirectComponentComponent } from './redirect-component/redirect-component.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { NextComponent } from './sous-composants/next/next.component';
     MainComponent,
     FooterComponent,
     ModaleComponent,
-    NextComponent
+    NextComponent,
+    RedirectComponentComponent
   ],
   imports: [
     BrowserModule,
