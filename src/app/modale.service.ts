@@ -4,17 +4,19 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ModaleService {
-  name = "";
-  email="";
-  phoneNumber : any;
-arcade = 0;
-advanced = 0;
-pro = 0;
-onlineService = 0;
-largerStorage = 0;
-customizeProfile = 0;
-total = 0;
+ private name = "";
+ private email="";
+ private phoneNumber : any;
+ private arcade = 0;
+ private advanced = 0;
+ private pro = 0;
+ private onlineService = 0;
+ private largerStorage = 0;
+ private customizeProfile = 0;
+ private total = 0;
   constructor() { }
+
+
 
 setArcade(value : number){
 this.arcade = value;
@@ -28,12 +30,24 @@ setPro(value : number){
   this.pro = value;
 }
 
+getOnlineService(){
+  return this.onlineService;
+}
+
 setOnlineService(value : number){
   this.onlineService = value;
 }
 
+getLargerStorage(){
+  return this.largerStorage;
+}
+
 setLargerStorage(value : number){
 this.largerStorage = value;
+}
+
+getCustomizeProfile(){
+  return this.customizeProfile;
 }
 
 setCustomizeProfile(value : number){

@@ -97,14 +97,14 @@
 <div class="optionFinish firstAndSecondOption">
   <div>
 
-    <p *ngIf="onlineService">Online service</p>
-    <p *ngIf="largerStorage">Larger Storage</p>
-    <p *ngIf="customizeProfile">Customize Profile</p>
+    <p *ngIf="modaleService.getOnlineService() !== 0">Online service</p>
+    <p *ngIf="modaleService.getLargerStorage() !== 0">Larger Storage</p>
+    <p *ngIf="modaleService.getCustomizeProfile() !== 0">Customize Profile</p>
   </div>
   <div>
-    <p *ngIf="onlineService">+$1/mo</p>
-    <p *ngIf="largerStorage">+$2/mo</p>
-    <p *ngIf="customizeProfile">+$2/mo</p>
+    <p *ngIf="modaleService.getOnlineService() !== 0">+$1/mo</p>
+    <p *ngIf="modaleService.getLargerStorage() !== 0">+$2/mo</p>
+    <p *ngIf="modaleService.getCustomizeProfile() !== 0">+$2/mo</p>
 
 
   </div>
