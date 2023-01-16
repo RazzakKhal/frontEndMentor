@@ -4,7 +4,7 @@
 
 
 <!-- partie Personal Info  -->
-<form action="" *ngIf="afficheForm" [formGroup]="signInForm">
+<form action="" *ngIf="afficheForm" [formGroup]="signInForm" >
   <div class="labelInput">
     <p *ngIf="!userName.valid" class="red redtest">champs requis</p>
   <label for="name">Name</label>
@@ -55,7 +55,7 @@
 <!-- Partie Pick adds-on -->
 <div class="pickadd" *ngIf="afficheAdd">
 <div class="optionAdd">
-  <input type="checkbox" class="check">
+  <input type="checkbox" class="check" (click)="pickAddCheck1()">
   <div class="titleDescription">
     <p>Online Service</p>
     <p>Acces to Multiplayer Games</p>
@@ -64,7 +64,7 @@
 </div>
 
 <div class="optionAdd">
-  <input type="checkbox" class="check">
+  <input type="checkbox" class="check" (click)="pickAddCheck2()">
   <div class="titleDescription">
     <p>Larger Storage</p>
     <p>Extra 1TB of cloud save</p>
@@ -73,7 +73,7 @@
 </div>
 
 <div class="optionAdd">
-  <input type="checkbox" class="check">
+  <input type="checkbox" class="check" (click)="pickAddCheck3()">
   <div class="titleDescription">
     <p>Customizable profile</p>
     <p>Custom Theme On Your Profile</p>
@@ -96,18 +96,23 @@
 
 <div class="optionFinish firstAndSecondOption">
   <div>
-    <p>Online service</p>
-    <p>Larger Storage</p>
+
+    <p *ngIf="onlineService">Online service</p>
+    <p *ngIf="largerStorage">Larger Storage</p>
+    <p *ngIf="customizeProfile">Customize Profile</p>
   </div>
   <div>
-    <p>+$1/mo</p>
-    <p>+$2/mo</p>
+    <p *ngIf="onlineService">+$1/mo</p>
+    <p *ngIf="largerStorage">+$2/mo</p>
+    <p *ngIf="customizeProfile">+$2/mo</p>
+
+
   </div>
 </div>
 
 <div class="optionFinish thirdOption">
   <p>Total per month</p>
-  <p>+$12/mo</p>
+  <p>+${{total}}/mo</p>
 </div>
 
 </div>

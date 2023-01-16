@@ -1,6 +1,8 @@
 import { Component, Injectable, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { ModaleService } from '../../modale.service';
 import { Router } from '@angular/router';
+import { cp } from 'fs';
 import { of } from 'rxjs';
 
 
@@ -35,9 +37,14 @@ proPrice = 15;
 arcadeSelected = false;
 advancedSelected = false;
 proSelected = false;
+onlineService = false;
+largerStorage = false;
+customizeProfile = false;
+modaleService : ModaleService;
+total = 0;
 
 
-constructor(formBuilder : FormBuilder, router: Router){
+constructor(formBuilder : FormBuilder, router: Router, modaleService : ModaleService){
 
   this.userName = formBuilder.control('', [Validators.required]);
   this.userMail = formBuilder.control('', [Validators.required, Validators.email]);
@@ -49,6 +56,7 @@ this.signInForm = formBuilder.group({
 });
 this.router = router;
 this.signInValid = this.signInForm.valid;
+this.modaleService = modaleService;
 }
 
 // méthode pour récupérer l'etat du formulaire dans mon composant next
@@ -59,7 +67,7 @@ getEtat(){
 
 
 ngOnInit(): void {
-
+this.total = this.modaleService.getTotal();
 }
 
 changeMonthly(){
@@ -83,18 +91,60 @@ changeArcadeSelected(){
   this.arcadeSelected = true;
   this.advancedSelected = false;
   this.proSelected = false;
+  this.modaleService.setArcade(this.arcadePrice);
+  this.modaleService.setAdvanced(0);
+  this.modaleService.setPro(0);
 }
+
+
 
 changeAdvancedSelected(){
   this.arcadeSelected = false;
   this.advancedSelected = true;
   this.proSelected = false;
+  this.modaleService.setAdvanced(this.advancedPrice);
+  this.modaleService.setPro(0);
+  this.modaleService.setArcade(0);
 }
 
 changeProSelected(){
   this.arcadeSelected = false;
   this.advancedSelected = false;
   this.proSelected = true;
+  this.modaleService.setPro(this.proPrice);
+  this.modaleService.setArcade(0);
+  this.modaleService.setAdvanced(0);
+}
+
+
+// méthodes qui vérifient les options checked et ajoutent les valeur au total
+pickAddCheck1(){
+    this.onlineService = !this.onlineService;
+    if(this.onlineService){
+      this.modaleService.setOnlineService(1);
+    }else{
+      this.modaleService.setOnlineService(0);
+    }
+}
+
+pickAddCheck2(){
+  this.largerStorage = !this.largerStorage;
+  if(this.largerStorage){
+    this.modaleService.setLargerStorage(2);
+  }else{
+    this.modaleService.setLargerStorage(0);
+  }
+}
+
+pickAddCheck3(){
+  this.customizeProfile = !this.customizeProfile;
+  if(this.customizeProfile){
+    this.modaleService.setCustomizeProfile(2);
+  }else{
+    this.modaleService.setCustomizeProfile(0);
+  }
+
+
 }
 
 }
