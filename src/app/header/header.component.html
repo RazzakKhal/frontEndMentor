@@ -1,8 +1,8 @@
 <div class="main">
   <ul>
-    <li><a [routerLink]="['/personalInfo']">1</a></li>
-    <li><a [routerLink]="['/selectYourPlan']">2</a></li>
-    <li><a [routerLink]="['/pickAddsOn']">3</a></li>
-    <li><a [routerLink]="['/finishingUp']">4</a></li>
+    <li [ngStyle]="{ backgroundColor : router.url === '/personalInfo' ? 'hsl(213, 96%, 18%)' : 'initial'}">1</li>
+    <li [ngStyle]="{ backgroundColor : router.url === '/selectYourPlan' ? 'hsl(213, 96%, 18%)' : 'initial'}">2</li>
+    <li  [ngStyle]="{ backgroundColor : router.url === '/pickAddsOn' ? 'hsl(213, 96%, 18%)' : 'initial'}">3</li>
+    <li [ngStyle]="{ backgroundColor : router.url === '/finishingUp' ? 'hsl(213, 96%, 18%)' : 'initial'}">4</li>
   </ul>
 </div>
